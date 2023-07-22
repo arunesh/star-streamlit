@@ -54,6 +54,20 @@ if customer_prior_coverage == "Yes":
 # Number of cars. Update a car in session state.
 
 # Show existing cars. 
+num_cars_entered = st.session_state.get("num_cars")
+
+# Example list of cars.
+temp_cars = [{"make":"df", "model":"df", "year":2003}, {"make":"ddf", "model":"dfdf", "year":2005}]
+
+def populate_cars(all_cars):
+    for car in all_cars:
+        st.write("Make = " + car["make"])
+        st.write("Model = " + car["model"])
+        st.write("Year = " + car["year"])
+        st.buttion("Remove this car")
+
+
+populate_cars(st.session_state.get("all_cars"))
 
 # Quoting system.
 
